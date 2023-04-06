@@ -15,3 +15,5 @@ export const space = {
   64: "16rem",
   80: "20rem",
 } as const;
+
+// margin, padding, width, height
