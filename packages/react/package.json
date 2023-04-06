@@ -11,8 +11,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "@erik-ignite-ui/ts-config": "*",
     "@erik-ignite-ui/tokens": "*",
     "tsup": "^6.7.0",
     "typescript": "^5.0.3"
