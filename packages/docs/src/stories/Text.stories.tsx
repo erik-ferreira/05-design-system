@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Text, TextProps } from "@erik-ignite-ui/react";
 
 export default {
-  title: "Typography/Box",
+  title: "Typography/Text",
   component: Text,
   args: {
     children:
