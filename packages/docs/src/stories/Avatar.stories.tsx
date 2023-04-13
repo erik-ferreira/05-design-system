@@ -8,6 +8,13 @@ export default {
     src: "https://github.com/erik-ferreira.png",
     alt: "Erik Ferreira",
   },
+  argTypes: {
+    src: {
+      control: {
+        type: "text",
+      },
+    },
+  },
 } as Meta<AvatarProps>;
 
 export const Primary: StoryObj<AvatarProps> = {};
