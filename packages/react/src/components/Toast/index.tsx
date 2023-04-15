@@ -9,7 +9,6 @@ import {
   ToastTitle,
   ToastDescription,
   ToastAction,
-  // ToastClose,
   ToastViewport,
 } from "./styles";
 
@@ -19,10 +18,10 @@ export function Toast(props: ToastProps) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
-    <ToastProvider>
+    <ToastProvider swipeDirection="right">
       <Button onClick={() => setModalIsOpen(true)}>Show Toast</Button>
 
-      <ToastRoot open={modalIsOpen}>
+      <ToastRoot open={modalIsOpen} onOpenChange={setModalIsOpen} {...props}>
         <ToastTitle>Agendamento realizado</ToastTitle>
         <ToastDescription asChild>
           <time>Quarta-feira, 23 de Outubro às 16h</time>
