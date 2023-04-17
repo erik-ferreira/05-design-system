@@ -46,6 +46,7 @@ export const ToastRoot = styled(Toast.Root, {
 });
 
 export const ToastTitle = styled(Toast.Title, {
+  width: "92%",
   fontFamily: "$default",
   fontSize: "$xl",
   color: "$white",
