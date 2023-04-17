@@ -8,9 +8,20 @@ export const TooltipTrigger = styled(Tooltip.Trigger, {
   color: "$gray100",
 });
 
+export const TooltipArrow = styled(Tooltip.Arrow, {
+  fill: "$gray900",
+  width: "$4",
+  height: "2",
+});
+
 export const TooltipContent = styled(Tooltip.Content, {
   backgroundColor: "$gray900",
-  borderRadius: "$md",
+  borderRadius: "$xs",
   padding: "$3 $4",
   maxWidth: 250,
+
+  fontFamily: "$default",
+  fontSize: "$sm",
+  lineHeight: "$short",
+  color: "$gray100",
 });

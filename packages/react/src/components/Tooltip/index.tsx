@@ -1,14 +1,16 @@
-import { Text } from "../Text";
-import { Heading } from "../Heading";
-import { ComponentProps } from "react";
+import { ComponentProps, ReactNode } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
-import { TooltipTrigger, TooltipContent } from "./styles";
+import { Text } from "../Text";
+
+import { TooltipTrigger, TooltipArrow, TooltipContent } from "./styles";
 
 export interface TooltipProps
-  extends ComponentProps<typeof TooltipPrimitive.Root> {}
+  extends ComponentProps<typeof TooltipPrimitive.Root> {
+  children: ReactNode;
+}
 
-export function Tooltip(props: TooltipProps) {
+export function Tooltip({ children, ...props }: TooltipProps) {
   return (
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root {...props}>
@@ -18,15 +20,9 @@ export function Tooltip(props: TooltipProps) {
 
         <TooltipPrimitive.Portal>
           <TooltipContent>
-            <TooltipPrimitive.Arrow />
+            <TooltipArrow />
 
-            <Heading size="sm">Lorem Ipsum</Heading>
-            <Text size="sm" css={{ lineHeight: "$short" }}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
-              voluptatibus repudiandae non ducimus totam voluptatem? Rem ut
-              numquam atque iste quia incidunt eligendi aliquid inventore iusto
-              rerum, nemo nulla non?
-            </Text>
+            {children}
           </TooltipContent>
         </TooltipPrimitive.Portal>
       </TooltipPrimitive.Root>
