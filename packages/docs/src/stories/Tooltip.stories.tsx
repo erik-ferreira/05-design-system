@@ -16,11 +16,18 @@ export default {
         </Text>
       </>
     ),
+    side: "bottom",
   },
   argTypes: {
     children: {
       control: {
         type: "text",
+      },
+    },
+    side: {
+      options: ["top", "right", "bottom", "left"],
+      control: {
+        type: "inline-radio",
       },
     },
   },

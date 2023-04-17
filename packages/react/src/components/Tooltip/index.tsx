@@ -8,9 +8,10 @@ import { TooltipTrigger, TooltipArrow, TooltipContent } from "./styles";
 export interface TooltipProps
   extends ComponentProps<typeof TooltipPrimitive.Root> {
   children: ReactNode;
+  side?: "top" | "right" | "bottom" | "left";
 }
 
-export function Tooltip({ children, ...props }: TooltipProps) {
+export function Tooltip({ children, side = "bottom", ...props }: TooltipProps) {
   return (
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root {...props}>
@@ -19,7 +20,7 @@ export function Tooltip({ children, ...props }: TooltipProps) {
         </TooltipTrigger>
 
         <TooltipPrimitive.Portal>
-          <TooltipContent>
+          <TooltipContent side={side}>
             <TooltipArrow />
 
             {children}
